@@ -16,11 +16,10 @@ public class ListaEncadeada<T> {
             return;
         }
         No<T> itemAux= item;
-        for (int i = 0; i < this.size(); i++) {
+        for (int i = 0; i < this.size()-1; i++) {
             itemAux = itemAux.getProxNo();
         }
         itemAux.setProxNo(novoNo);
-
     }
 
     public T remove(int index){
@@ -97,9 +96,7 @@ public class ListaEncadeada<T> {
             itemAuxiliar = itemAuxiliar.getProxNo();
 
         }
-        return "ListaEncadeada{" +
-                "item=" + item +
-                '}';
+        return strRetorno;
     }
 
 }
