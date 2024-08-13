@@ -1,3 +1,4 @@
+import ListaCircular.ListaCircular;
 import ListaDuplamenteEncadeada.ListaDupla;
 import ListaEncadeada.ListaEncadeada;
 
@@ -5,7 +6,8 @@ import ListaEncadeada.ListaEncadeada;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-/*
+
+        /*
         ListaEncadeada<String> minhaListaEncadeada = new ListaEncadeada<String>();
 
         minhaListaEncadeada.add("teste1");
@@ -23,8 +25,9 @@ public class Main {
         minhaListaEncadeada.remove(3);
 
         System.out.println(minhaListaEncadeada);
- */
+        */
 
+        /*
         ListaDupla<String> minhalistaDupla = new ListaDupla<>();
 
         minhalistaDupla.add("c1");
@@ -42,5 +45,22 @@ public class Main {
 
         System.out.println(minhalistaDupla);
         System.out.println(minhalistaDupla.get(3));
+
+         */
+
+        ListaCircular<String> minhaListaCircular = new ListaCircular<String>();
+
+        minhaListaCircular.add("c0");
+        minhaListaCircular.add("c1");
+        minhaListaCircular.add("c2");
+        minhaListaCircular.add("c3");
+        minhaListaCircular.add("c4");
+        minhaListaCircular.add("c5");
+        minhaListaCircular.add("c6");
+        minhaListaCircular.add("c7");
+        minhaListaCircular.add("c8");
+        minhaListaCircular.add("c9");
+
+        System.out.println(minhaListaCircular);
     }
 }
