@@ -1,4 +1,4 @@
-package No;
+package ListaEncadeada.No;
 
 public class No<T> {
 
@@ -27,11 +27,11 @@ public class No<T> {
 
     @Override
     public String toString() {
-        return "No{ conteudo=" + conteudo + '}';
+        return "ListaEncadeada.No{ conteudo=" + conteudo + '}';
     }
 
     public String toStringEncadeado(){
-        String str = "No{"+ conteudo + "}";
+        String str = "ListaEncadeada.No{"+ conteudo + "}";
         if(proxNo != null){
             str += "->" + proxNo.toString();
         }else{

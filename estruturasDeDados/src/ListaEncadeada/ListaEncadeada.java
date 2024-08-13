@@ -1,5 +1,5 @@
 package ListaEncadeada;
-import No.No;
+import ListaEncadeada.No.No;
 
 public class ListaEncadeada<T> {
 
@@ -92,7 +92,7 @@ public class ListaEncadeada<T> {
         String strRetorno = "";
         No<T> itemAuxiliar = item;
         for (int i = 0; i < size(); i++) {
-            strRetorno += "[No{conteudo=" + itemAuxiliar.getConteudo() +"}] --->";
+            strRetorno += "[ListaEncadeada.No{conteudo=" + itemAuxiliar.getConteudo() +"}] --->";
             itemAuxiliar = itemAuxiliar.getProxNo();
 
         }
