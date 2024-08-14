@@ -1,6 +1,10 @@
 import ListaCircular.ListaCircular;
 import ListaDuplamenteEncadeada.ListaDupla;
 import ListaEncadeada.ListaEncadeada;
+import arvoreBinaria.ArvoreBinaria;
+import arvoreBinaria.model.Obj;
+
+import java.util.Objects;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -48,6 +52,7 @@ public class Main {
 
          */
 
+        /*
         ListaCircular<String> minhaListaCircular = new ListaCircular<String>();
 
         minhaListaCircular.add("c0");
@@ -62,5 +67,24 @@ public class Main {
         minhaListaCircular.add("c9");
 
         System.out.println(minhaListaCircular);
+         */
+
+        ArvoreBinaria<Obj> minhaArvore = new ArvoreBinaria<>();
+
+        minhaArvore.inserir(new Obj(13));
+        minhaArvore.inserir(new Obj(10));
+        minhaArvore.inserir(new Obj(25));
+        minhaArvore.inserir(new Obj(2));
+        minhaArvore.inserir(new Obj(12));
+        minhaArvore.inserir(new Obj(20));
+        minhaArvore.inserir(new Obj(31));
+        minhaArvore.inserir(new Obj(29));
+        minhaArvore.inserir(new Obj(32));
+        minhaArvore.remover(new Obj(32));
+
+        minhaArvore.exibirInOrdem();
+        minhaArvore.exibirPreOrdem();
+        minhaArvore.exibirPostOrdem();
+
     }
 }
