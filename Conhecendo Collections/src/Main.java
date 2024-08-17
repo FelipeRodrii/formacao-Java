@@ -70,7 +70,6 @@ public class Main {
  */
         List<String> perguntas = new ArrayList<>();
         int countSim=0;
-        int countNao=0;
 
         Scanner scan = new Scanner(System.in);
         perguntas.add("Telefonou para a Vítima?");
@@ -86,7 +85,6 @@ public class Main {
             int res = scan.nextInt();
 
             if (res == 0) countSim++;
-            else countNao++;
 
         }
         if(countSim == 2){
