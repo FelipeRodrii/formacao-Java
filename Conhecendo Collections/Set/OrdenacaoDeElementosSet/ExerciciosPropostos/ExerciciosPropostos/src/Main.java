@@ -1,10 +1,6 @@
-import Ex2.LinguagemFavorita;
-import Ex2.OrdenaAno;
-import Ex2.OrdenaIde;
-
-import java.util.LinkedHashSet;
-import java.util.Set;
-import java.util.TreeSet;
+import Ex1.*;
+import Ex2.*;
+import java.util.*;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -21,7 +17,7 @@ public class Main {
          G: Limpe o conjunto
          H: Confira se o conjunto está vazio
         */
-/*
+
         ArcoIris meuArcoIris = new ArcoIris(){{
             add(new Cor("Vermelho"));
             add(new Cor("Laranja"));
@@ -54,8 +50,8 @@ public class Main {
 
         meuArcoIris.limpaCollecao();
 
-        System.out.println(meuArcoIris.impressaoCores());
- */
+        //System.out.println(meuArcoIris.impressaoCores());
+
         /* Proposta 2 - Crie uma Classe Linguagem Favorita que possua os atributosnome,anoDeCriacao e ide. Em seguida,
         crie um conjunto com 3 linguagens e faça um programa que ordene esse conjunto por:
         A: Ordem de inserçao
