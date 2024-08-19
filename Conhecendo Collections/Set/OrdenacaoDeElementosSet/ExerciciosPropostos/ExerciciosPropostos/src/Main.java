@@ -38,5 +38,18 @@ public class Main {
 
         System.out.println("\t--Ordem Inversa--\t");
         System.out.println(meuArcoIris.ordemInversa());
+
+        System.out.println("\t--Exiba todas as cores que começam com a letra 'V'--\t");
+        System.out.println(meuArcoIris.coresComV());
+
+       System.out.println("Remova todas as cores que não começam com a letra 'V'");
+        meuArcoIris.removerSemLetraV();
+
+        System.out.println(meuArcoIris.impressaoCores());
+
+        meuArcoIris.limpaCollecao();
+
+        System.out.println(meuArcoIris.impressaoCores());
+
     }
 }

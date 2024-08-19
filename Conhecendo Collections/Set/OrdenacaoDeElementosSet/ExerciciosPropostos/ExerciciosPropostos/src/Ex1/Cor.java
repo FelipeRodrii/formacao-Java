@@ -12,7 +12,7 @@ public class Cor implements Comparable<Cor>{
     }
 
     public String getCor() {
-        return cor;
+        return this.cor;
     }
 
     public void setCor(String cor) {
