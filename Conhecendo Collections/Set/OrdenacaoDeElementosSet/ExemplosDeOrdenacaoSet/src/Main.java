@@ -54,7 +54,15 @@ public class Main {
 
         //Esse Treeset utiliza o ComparatonomegeneroTempoEpisodio criado em uma classe separada
         System.out.println("--\tOrdem nome/Gênero/TempoEpisodio\t--");
-        Set<Serie> minhasSeries3 = new TreeSet<>(new ComparatoNomeGeneroTempoEpisodio());
+        Set<Serie> minhasSeries3 = new TreeSet<>(new ComparatoNomeGeneroTempoEpisodio()){{
+            add(new Serie("got", "fantasia", 60));
+            add(new Serie("dark", "drama", 60));
+            add(new Serie("that '70s show", "comédia", 25));
+            add(new Serie("B99", "comédia", 20));
+        }};
+        for (Serie serie :
+        minhasSeries3)
+    System.out.println(serie.getNome() + " - " + serie.getGenero() + " - " + serie.getTempoEpidodio());
 
 
     }

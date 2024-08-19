@@ -14,7 +14,7 @@ public class ArcoIris{
     }
 
     public String impressaoCores(){
-        if (arcoIris.isEmpty()) throw new StringIndexOutOfBoundsException("Coleção Vazia Deu Certo");
+        if (arcoIris.isEmpty()) throw new StringIndexOutOfBoundsException("Coleção Vazia TESTE H");
             Iterator<Cor> aux = arcoIris.iterator();
             String retorno="";
 
@@ -26,14 +26,14 @@ public class ArcoIris{
 
     public TreeSet<Cor> ordemAlfabetica(){
         TreeSet<Cor> ordenada = new TreeSet<>(arcoIris);
-        if (ordenada.isEmpty()) throw new StringIndexOutOfBoundsException("Coleção Vazia!");
+        if (ordenada.isEmpty()) throw new StringIndexOutOfBoundsException("Coleção Vazia TESTE H");
 
         return ordenada;
     }
 
     public String ordemInversa(){
         TreeSet<Cor> aux = new TreeSet<>(arcoIris);
-        if(aux.isEmpty()) throw new StringIndexOutOfBoundsException("Coleção Vazia Deu Certo");
+        if(aux.isEmpty()) throw new StringIndexOutOfBoundsException("Coleção Vazia TESTE H");
 
         Iterator<Cor> inverso = aux.descendingIterator();
         String retorno= "";
@@ -59,6 +59,11 @@ public class ArcoIris{
         return retorno;
     }
 
+    // Nota, para remover o objeto da nossa coleção, não enquanto estivermos usando o Iterator,não podemos remover
+    // diretamenta da coleção mas sim do iterator utilizado que por sua vez irá remover diretamente da Coleção, isto
+    // é pq o Iterator não Cria ou cópia a coleção, ele intera 'olhando' a coleção e mostrando os elementos dela,
+    // assim, qualquer alteração na coleção enuqanto iteramos com o iterator, irá desincronizar ambas. Por isso
+    // podemos mudar direto no Iterator e ele mudar a nossa coleção.
     public void removerSemLetraV(){
         Iterator<Cor> aux = arcoIris.iterator();
 
