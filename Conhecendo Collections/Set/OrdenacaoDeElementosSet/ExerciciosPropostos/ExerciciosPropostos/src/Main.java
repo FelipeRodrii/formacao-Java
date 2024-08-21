@@ -43,14 +43,14 @@ public class Main {
         System.out.println("\t--Exiba todas as cores que começam com a letra 'V'--\t");
         System.out.println(meuArcoIris.coresComV());
 
-       System.out.println("Remova todas as cores que não começam com a letra 'V'");
+        System.out.println("Remova todas as cores que não começam com a letra 'V'");
         meuArcoIris.removerSemLetraV();
-
         System.out.println(meuArcoIris.impressaoCores());
 
+        System.out.println("Verifica se a Coleção está vazia");
         meuArcoIris.limpaCollecao();
 
-        //System.out.println(meuArcoIris.impressaoCores());
+        System.out.println(meuArcoIris.isEmpty());
 
         /* Proposta 2 - Crie uma Classe Linguagem Favorita que possua os atributosnome,anoDeCriacao e ide. Em seguida,
         crie um conjunto com 3 linguagens e faça um programa que ordene esse conjunto por:
@@ -81,8 +81,8 @@ public class Main {
             add(new LinguagemFavorita("Python", 1989, "VSCode"));
             add(new LinguagemFavorita("JavaScript", 1995, "NetBeans"));
         }};
-        for (LinguagemFavorita l2 :
-                minhasLinguagens2) System.out.println(l2.getIde() +" - "+  l2.getNome() + " - " + l2.getAnoDeCriacao()+ " - ");
+        for (LinguagemFavorita l2 : minhasLinguagens2)
+            System.out.println(l2.getIde() +" - "+  l2.getNome() + " - " + l2.getAnoDeCriacao()+ " - ");
 
         System.out.println("\t-- Ano de criação e nome --\t");
         Set<LinguagemFavorita> minhasLinguagens3 = new TreeSet<>(new OrdenaAno()){{
@@ -90,9 +90,8 @@ public class Main {
             add(new LinguagemFavorita("Python", 1989, "VSCode"));
             add(new LinguagemFavorita("JavaScript", 1995, "NetBeans"));
         }};
-        for (LinguagemFavorita l3 :
-                minhasLinguagens3) System.out.print(l3.getIde() +" - "+ l3.getNome() +" - "+ l3.getAnoDeCriacao() +
-                " - ");
+        for (LinguagemFavorita l3 : minhasLinguagens3)
+            System.out.print(l3.getIde() +" - "+ l3.getNome() +" - "+ l3.getAnoDeCriacao() + " - ");
 
 
 

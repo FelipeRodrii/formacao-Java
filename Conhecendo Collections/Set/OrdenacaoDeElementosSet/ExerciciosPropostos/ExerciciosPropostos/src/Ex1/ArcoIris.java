@@ -14,7 +14,7 @@ public class ArcoIris{
     }
 
     public String impressaoCores(){
-        if (arcoIris.isEmpty()) throw new StringIndexOutOfBoundsException("Coleção Vazia TESTE H");
+        if (arcoIris.isEmpty()) throw new StringIndexOutOfBoundsException("Coleção Vazia ");
             Iterator<Cor> aux = arcoIris.iterator();
             String retorno="";
 
@@ -26,14 +26,14 @@ public class ArcoIris{
 
     public TreeSet<Cor> ordemAlfabetica(){
         TreeSet<Cor> ordenada = new TreeSet<>(arcoIris);
-        if (ordenada.isEmpty()) throw new StringIndexOutOfBoundsException("Coleção Vazia TESTE H");
+        if (ordenada.isEmpty()) throw new StringIndexOutOfBoundsException("Coleção Vazia");
 
         return ordenada;
     }
 
     public String ordemInversa(){
         TreeSet<Cor> aux = new TreeSet<>(arcoIris);
-        if(aux.isEmpty()) throw new StringIndexOutOfBoundsException("Coleção Vazia TESTE H");
+        if(aux.isEmpty()) throw new StringIndexOutOfBoundsException("Coleção Vazia");
 
         Iterator<Cor> inverso = aux.descendingIterator();
         String retorno= "";
@@ -77,6 +77,10 @@ public class ArcoIris{
 
     public void limpaCollecao(){
         arcoIris.clear();
+    }
+
+    public boolean isEmpty(){
+        return this.arcoIris.isEmpty();
     }
 
 
