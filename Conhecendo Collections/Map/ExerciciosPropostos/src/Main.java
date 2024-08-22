@@ -115,5 +115,11 @@ public class Main {
 
         //Todo: Desafio Opcional --> Simule um dado, lance ele 100 vezes e armazene. Depois mostre quantas vezes cada
         //valor foi sorteado
+        System.out.println("DESAFIO DO DADO:");
+        Dado dadoBranco = new Dado();
+        List sorteados = new ArrayList<>();
+
+        sorteados.addAll(dadoBranco.lancarDados(100));
+        System.out.println(dadoBranco.agrupamentoSorteados(sorteados));
     }
 }
