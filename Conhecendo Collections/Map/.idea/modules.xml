@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ExemploOrdenacaoMap/ExemploOrdenacaoMap.iml" filepath="$PROJECT_DIR$/ExemploOrdenacaoMap/ExemploOrdenacaoMap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ExemplosMap/ExemplosMap.iml" filepath="$PROJECT_DIR$/ExemplosMap/ExemplosMap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ExerciciosPropostos/ExerciciosPropostos.iml" filepath="$PROJECT_DIR$/ExerciciosPropostos/ExerciciosPropostos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Map.iml" filepath="$PROJECT_DIR$/.idea/Map.iml" />
+    </modules>
+  </component>
+</project>
