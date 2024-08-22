@@ -25,7 +25,7 @@ public class Main {
         for (Map.Entry<String, Integer> entra: entradas)
                 System.out.println("Estado: "+entra.getKey()+ " População: "+entra.getValue());
 
-        System.out.println("******************************************\n");
+        System.out.println("--------------------------------------------------------------");
 
         //Todo Substitua a população do estadodo RN por 3.534,165
         System.out.println("Mudança no Estado RN: ");
@@ -34,7 +34,7 @@ public class Main {
         for (Map.Entry<String, Integer> entrada: entradas)
             if (entrada.getKey().equals("RN"))
                 System.out.println("Estado: "+ entrada.getKey() + " População: "+ entrada.getValue());
-        System.out.println("******************************************\n");
+        System.out.println("--------------------------------------------------------------");
 
         //Todo: Confira se o estado PB está no dicionário, caso não adicione: PB - 4.039,277
         System.out.println("Adição do Estado PB: ");
@@ -43,7 +43,7 @@ public class Main {
         entradas = estadosPopulacao.entrySet();
         for(Map.Entry<String, Integer> entrada: entradas)
             System.out.println("Estado: "+ entrada.getKey()+ " população: "+ entrada.getValue());
-        System.out.println("******************************************\n");
+        System.out.println("--------------------------------------------------------------");
 
         //Todo: Exiba a população PE
         System.out.println("A Popuação de PE é: "+estadosPopulacao.get("PE"));
@@ -57,13 +57,13 @@ public class Main {
             put("RN", 3534265);
         }};
         System.out.println(estadosPopulacaoOrdemEntrada);
-        System.out.println("******************************************\n");
+        System.out.println("--------------------------------------------------------------");
 
         //Todo: Exiba os estados e suas populações em ordem alfabética;
         System.out.println("Informando em ordem Alfabética: ");
         Map<String, Integer> estadosPopulacaoOrdemAlfabetica = new TreeMap<>(estadosPopulacao);
         System.out.println(estadosPopulacaoOrdemAlfabetica);
-        System.out.println("******************************************\n");
+        System.out.println("--------------------------------------------------------------");
 
         //Todo: Exiba o estado com a menor população e sua quantidade
         int menorPopulacao= Collections.min(estadosPopulacao.values());
@@ -72,7 +72,7 @@ public class Main {
         for (Map.Entry<String, Integer> entrada: entradas)
             if(entrada.getValue().equals(menorPopulacao))
                 System.out.println("Estado com Menor População: " +entrada.getKey()+ " Populção: " +entrada.getValue());
-        System.out.println("******************************************\n");
+        System.out.println("--------------------------------------------------------------");
 
         //Todo: Exiba o estado com a maior população e sua quantidade
         int maiorPopulacao= Collections.max(estadosPopulacao.values());
@@ -80,11 +80,11 @@ public class Main {
         for (Map.Entry<String, Integer> entrada: entradas)
             if (entrada.getValue().equals(maiorPopulacao))
                 System.out.println("Estado com Maior População: " +entrada.getKey()+ " Populção:" +entrada.getValue());
-        System.out.println("******************************************\n");
+        System.out.println("--------------------------------------------------------------");
 
         //Todo:Exiba a soma da população desses estados
         System.out.println("A soma da população desses estados é: "+ (menorPopulacao+maiorPopulacao));
-        System.out.println("******************************************\n");
+        System.out.println("--------------------------------------------------------------");
 
         //Todo: Exiba a média da população deste dicionário de estados
         int somaTotal=0;
@@ -94,7 +94,7 @@ public class Main {
             somaTotal+= iterator.next();
 
         System.out.println("A média populacional nestes estados é: "+ (somaTotal/ estadosPopulacao.size()));
-        System.out.println("******************************************\n");
+        System.out.println("--------------------------------------------------------------");
 
         //Todo: Remova os estados com a população menor que 4,000.000;
         System.out.println("Removendo estados com a população abaixo de 400000: ");
@@ -105,7 +105,7 @@ public class Main {
                 iterator1.remove();
 
         System.out.println(estadosPopulacao);
-        System.out.println("******************************************\n");
+        System.out.println("--------------------------------------------------------------");
 
         //Todo: Apague o dicionário de estados
         System.out.println("Limpando a nossa coleção e verificando: ");
