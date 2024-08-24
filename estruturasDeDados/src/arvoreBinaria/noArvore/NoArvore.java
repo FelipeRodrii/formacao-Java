@@ -1,7 +1,10 @@
 package arvoreBinaria.noArvore;
 
+// Classe representando cada Nó que iremos inserir em nossa árvore.
 public class NoArvore<T extends Comparable<T>> {
 
+    // Os atributos desta Classe serão o nosso conteudo, objeto que iremos guardar em nosso nó(unidade) da árvore
+    // binária.
     private T conteudo;
     private NoArvore<T> noDir;
     private NoArvore<T> noEsq;
@@ -16,6 +19,7 @@ public class NoArvore<T extends Comparable<T>> {
     }
 
     public void setConteudo(T conteudo) {
+
         this.conteudo = conteudo;
     }
 
