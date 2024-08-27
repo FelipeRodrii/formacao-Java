@@ -53,9 +53,9 @@ public class Main {
 
                 case 2:
                     for (int i=0; i< meusLivros.size(); i++){
-                        System.out.print("Índice: "+i+ "Livro" +meusLivros.get(i).getTitulo()+" -- ");
+                        System.out.println("Índice: "+i+ " Livro: " +meusLivros.get(i).getTitulo());
                     }
-                    System.out.print("Informe o Indice do Livros para remover");
+                    System.out.print("Informe o Indice do Livros para remover: ");
                     int indice = scan.nextInt();
                     System.out.println("Livro removido:"+ meusLivros.get(indice));
                     meusLivros.remove(indice);
