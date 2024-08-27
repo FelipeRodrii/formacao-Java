@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 /*
-        // Propsta de Exercicio 1
+        // Proposta de Exercicio 1
         List<Double> temperaturas = new ArrayList<>(6);
         Scanner scan = new Scanner(System.in);
         float media = 0;

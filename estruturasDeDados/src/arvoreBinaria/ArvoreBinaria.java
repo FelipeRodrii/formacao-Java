@@ -157,6 +157,4 @@ public class ArvoreBinaria <T extends Comparable<T>>{
             System.out.println("Conteudo nao encontrado. Bloco Catch");
         }
     }
-
-
 }
