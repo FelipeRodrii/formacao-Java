@@ -4,7 +4,7 @@ public class ControlePresenca {
     Set<Participante> listaPresenca = new HashSet<>();
 
     public void adicionarParticipante(String nome, int idade, int id){
-        listaPresenca.add(new Participante(nome, idade, id));
+            listaPresenca.add(new Participante(nome, idade, id));
     }
 
     public void removerParticipantePorID(int id){
@@ -23,7 +23,7 @@ public class ControlePresenca {
     public List<Participante> verificarPresencaPorNome(String nome){
         List<Participante> opcoes = new ArrayList<>();
         for (Participante participante: listaPresenca)
-            if (participante.getNome().equals(nome))
+            if (participante.getNome().contains(nome))
                 opcoes.add(participante);
         return opcoes;
     }
