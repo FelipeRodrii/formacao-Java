@@ -63,12 +63,6 @@ public class Main {
                     break;
                 case 4:
                     System.out.println(evento.listarParticipanteNomeID());
-                    System.out.println("Informe o ID do Participante a ser removido: ");
-
-                    id = scan.nextInt();
-                    scan.nextLine();
-
-                    System.out.println("Participante: "+ evento.recuperarParticipantePorID(id) + " Removido!");
                     break;
                 default:
                     System.out.println("Opção Invalida !");
