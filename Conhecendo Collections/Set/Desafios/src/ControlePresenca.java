@@ -16,6 +16,7 @@ public class ControlePresenca {
             }
         }
     }
+    Comparator.comparing();
     public Set<Participante> getListaPresenca() {
         return listaPresenca;
     }

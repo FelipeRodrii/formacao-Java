@@ -19,8 +19,8 @@ public class Main {
 
             System.out.println("Controlador de evento, escolha uma das opções: ");
             System.out.println("0---> Encerrar Programa: ");
-            System.out.println("1---> Inserir Participante: ");
-            System.out.println("2---> Remover Participante: ");
+            System.out.println("1---> Inserir DesafioHashSet.Participante: ");
+            System.out.println("2---> Remover DesafioHashSet.Participante: ");
             System.out.println("3---> Verificar presença por nome: ");
             System.out.println("4---> Listar Participantes e seus ID'S ");
 
@@ -52,7 +52,7 @@ public class Main {
                     id = scan.nextInt();
                     scan.nextLine();
 
-                    System.out.println("Participante: "+ evento.recuperarParticipantePorID(id)+ " removido.");
+                    System.out.println("DesafioHashSet.Participante: "+ evento.recuperarParticipantePorID(id)+ " removido.");
                     evento.removerParticipantePorID(id);
                     break;
                 case 3:

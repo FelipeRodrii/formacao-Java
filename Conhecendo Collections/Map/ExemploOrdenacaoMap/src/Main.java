@@ -4,6 +4,7 @@ import java.util.*;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
+        //Todo: Refatorar toda a parte de ordenação, utilizando Lambda.
         /*
          * Exibindo (Nome Autor - Nome Livro):
          *
@@ -38,20 +39,28 @@ public class Main {
 
         // Para podermos aplicar um Comparator utilizamos um TreeSet no lugar de um TreeMap, sendo um TreeSet de Map
         // .Entry ou Entradas de uma Map, onde cada Entry é um dado de um Map (Entendi assim pelo menos :))
-        System.out.println("--\tOrdem alfabética nomes dos livros\t--");
-        Set<Map.Entry<String, Livro>> meusLivros3 = new TreeSet<>(new ComparatorNomeLivros());
-        meusLivros3.addAll(meusLivros.entrySet());
-        System.out.println(meusLivros3 +"\n");
 
+        System.out.println("--\tOrdem alfabética nomes dos livros\t--");
+        Set<Map.Entry<String, Livro>> meusLivros3 =
+                new TreeSet<>(Comparator.comparing(entry -> entry.getValue().getNome()));
+
+        meusLivros3.addAll(meusLivros.entrySet());
+        for(Map.Entry<String, Livro> entry: meusLivros3){
+            System.out.println(entry.getValue().getNome());
+        }
 
         System.out.println("--\tOrdem número de página\t--");
-        Set<Map.Entry<String, Livro>> meusLivros4 = new TreeSet<>(new ComparatorPagina());
+        Set<Map.Entry<String, Livro>> meusLivros4 =
+                new TreeSet<>(Comparator.comparing(entry -> entry.getValue().getPaginas()));
         meusLivros4.addAll(meusLivros.entrySet());
-        System.out.println(meusLivros4 +"\n");
+        for(Map.Entry<String, Livro> entry: meusLivros4){
+            System.out.println(entry.getValue().getNome()+ " - " +entry.getValue().getPaginas()+ "Páginas");
+        }
     }
 
 }
 // Comparadores
+/*
 class ComparatorNomeLivros implements Comparator<Map.Entry<String, Livro>>{
 
     @Override
@@ -59,6 +68,8 @@ class ComparatorNomeLivros implements Comparator<Map.Entry<String, Livro>>{
         return l1.getValue().getNome().compareTo(l2.getValue().getNome());
     }
 }
+
+
 class ComparatorPagina implements Comparator<Map.Entry<String, Livro>>{
 
     @Override
@@ -66,3 +77,4 @@ class ComparatorPagina implements Comparator<Map.Entry<String, Livro>>{
         return Integer.compare(l1.getValue().getPaginas(), l2.getValue().getPaginas());
     }
 }
+ */

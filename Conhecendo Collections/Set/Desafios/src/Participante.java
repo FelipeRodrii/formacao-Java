@@ -50,6 +50,6 @@ public class Participante {
 
     @Override
     public String toString() {
-        return "Participante do Evento: " + "nome: " + nome + ", idade: " + idade + ", id: " + id +  '\n';
+        return "DesafioHashSet.Participante do Evento: " + "nome: " + nome + ", idade: " + idade + ", id: " + id +  '\n';
     }
 }

@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.function.Function;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -13,7 +14,7 @@ public class Main {
          * Estado = RN - População = 3.534,265
          */
 
-        // Todo: Crie um dicionário e relacione os estados e suas populações;
+        //Todo: Crie um dicionário e relacione os estados e suas populações;
         Map<String, Integer> estadosPopulacao = new HashMap<>(){{
             put("PE", 9616621);
             put("AL", 3351543);
@@ -112,7 +113,6 @@ public class Main {
         estadosPopulacao.clear();
         System.out.println(estadosPopulacao);
 
-
         //Todo: Desafio Opcional --> Simule um dado, lance ele 100 vezes e armazene. Depois mostre quantas vezes cada
         //valor foi sorteado
         System.out.println("DESAFIO DO DADO:");
@@ -121,5 +121,108 @@ public class Main {
 
         sorteados.addAll(dadoBranco.lancarDados(100));
         System.out.println(dadoBranco.agrupamentoSorteados(sorteados));
+
+        /*Todo: Dadas as seguintes informações de id e contato, crie um dicionário e ordene este dicionário exibindo
+        *(Nome id - Nome contato;
+        *
+        * id= 1 - Contato - nome: Simba, numero: 2222;
+        * id= 4 - Contato - nome: Cami, numero: 5555;
+        * id= 3 - Contato - nome: Jon, numero: 1111;
+        *
+        */
+
+        System.out.println("Proposta - 3");
+        System.out.println("--\tOrdem aleatória\t--");
+        Map<Integer, Contato> meusContatos = new HashMap<>(){{
+            put(1, new Contato("Simba", 5555));
+            put(4, new Contato("Cami", 1111));
+            put(3, new Contato("Jon", 2222));
+        }};
+        System.out.println(meusContatos);
+
+        System.out.println("--\tOrdem Inserção\t--");
+        Map<Integer, Contato> meusContato1 = new LinkedHashMap<>(){{
+            put(1, new Contato("Simba", 5555));
+            put(4, new Contato("Cami", 1111));
+            put(3, new Contato("Jon", 2222));
+        }};
+        System.out.println(meusContato1);
+
+        System.out.println("--\tOrdem id\t--");
+        Map<Integer, Contato> meusContatosPorID = new TreeMap<>(meusContatos);
+        System.out.println(meusContatosPorID);
+
+        System.out.println("--\tOrdem número telefone\t--");
+        /*
+        Set<Map.Entry<Integer, Contato>> meusContatosTelefone = new TreeSet<>(new Comparator<Map.Entry<Integer, Contato>>() {
+            @Override
+            public int compare(Map.Entry<Integer, Contato> c1, Map.Entry<Integer, Contato> c2) {
+                return Integer.compare(c1.getValue().getNumero(), c2.getValue().getNumero());
+            }
+        });
+
+        Set<Map.Entry<Integer,Contato>> meusContatosTelefone = new TreeSet<>(Comparator.comparing(
+                new Function<Map.Entry<Integer, Contato>, Integer>() {
+                    @Override
+                    public Integer apply(Map.Entry<Integer, Contato> entry) {
+                        return entry.getValue().getNumero();
+                    }
+                }));
+         */
+
+        Set<Map.Entry<Integer,Contato>> meusContatosTelefone = new TreeSet<>(Comparator.comparing(entry -> entry.getValue().getNumero()));
+
+        meusContatosTelefone.addAll(meusContatos.entrySet());
+
+        for (Map.Entry<Integer, Contato> entry: meusContatosTelefone) {
+            System.out.println(entry.getKey() + " - " + entry.getValue().getNumero() + " - " + entry.getValue().getNome());
+        }
+
+        System.out.println("--\tOrdem nome contato\t--");
+        /*
+        Set<Map.Entry<Integer, Contato>> meusContatosNome = new TreeSet<>(new ComparatorNome());
+        meusContatosNome.addAll(meusContatos.entrySet());
+
+        for (Map.Entry<Integer, Contato>entry: meusContatosNome){
+            System.out.println(entry.getKey()+ " - " +entry.getValue().getNome());
+                }
+
+         */
+
+        // Utilizando o Lambda de forma a susbtituir o uso de classe Comparator declarada, o lambda nos ajuda a
+        // simplificar uma classe anônima, sendo a sintaxe: corpo(Variável) -> função(implementação). A variável
+        // assume como seu valor o tipo que estamos passando na inicialização da variável principal ao qual se aplica
+        // (meusContatosNome) que nesse caso é Set<Map.Entry<>> e assim a variavel que representa os dados (entry)
+        // irá ter os métodos deste nosso tipo principal.
+        Set<Map.Entry<Integer, Contato>> meusContatosNome =
+                new TreeSet<>(Comparator.comparing(entry -> entry.getValue().getNome()));
+        meusContatosNome.addAll(meusContatos.entrySet());
+
+        for(Map.Entry<Integer, Contato> entry: meusContatosNome){
+            System.out.println(entry.getKey()+ " - " +entry.getValue().getNome());
+        }
+
+
+
+            }
+        }
+
+/*
+ * Trecho comentado poos utilizamos de Lambda para a criação destes métodos Comparator diretamente nas estruturas que
+ *  iriam utiliza-los
+class ComparatorNumero implements Comparator<Map.Entry<Integer, Contato>>{
+
+    @Override
+    public int compare(Map.Entry<Integer, Contato> c1, Map.Entry<Integer, Contato> c2) {
+        return Integer.compare(c1.getValue().getNumero(), c2.getValue().getNumero());
     }
 }
+*
+class ComparatorNome implements Comparator<Map.Entry<Integer, Contato>>{
+
+    @Override
+    public int compare(Map.Entry<Integer, Contato> c1, Map.Entry<Integer, Contato> c2) {
+        return c1.getValue().getNome().compareTo(c2.getValue().getNome());
+    }
+}
+ */
