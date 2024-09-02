@@ -12,8 +12,7 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         float media = 0;
 
-            System.out.println("INFORME A TEMPERATURA MÉDIA DOS 6 PREIMEIROS MESES DO ANO, SEGUINDO A ORDEM DESSES " +
-                    "MESES :");
+            System.out.println("INFORME A TEMPERATURA MÉDIA DOS 6 PREIMEIROS MESES DO ANO, SEGUINDO A ORDEM DESSES " + "MESES :");
 
             for (int i = 0; i < 6; i++) {
                 System.out.println("INFORME A TEMPERATURA MÉDIA DO " + (i+1) + "º MES:");
@@ -27,7 +26,7 @@ public class Main {
 
 
             System.out.println("**************************");
-            System.out.println("MESES ACIMA DA MÉDIA DE :"+ media%.2f);
+            System.out.println("MESES ACIMA DA MÉDIA DE :" + String.format("%.2f", media));
             System.out.println("**************************");
 
 
@@ -69,7 +68,7 @@ public class Main {
         }
 
 
-
+        System.out.println("EXERCICIO DO ASSASSINO !!");
         List<String> perguntas = new ArrayList<>();
         int countSim=0;
 
@@ -83,8 +82,8 @@ public class Main {
         System.out.println("RESPONDA AS PERGUNTAS COM 0 -> SIM E 1-> NÃO:");
         for(String pergunta: perguntas){
             System.out.println(pergunta);
-            int res = scan.nextInt();
 
+            int res = scan.nextInt();
             if (res == 0) countSim++;
 
         }
