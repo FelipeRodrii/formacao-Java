@@ -6,12 +6,11 @@ import java.util.Scanner;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-/*
+
         // Proposta de Exercicio 1
         List<Double> temperaturas = new ArrayList<>(6);
         Scanner scan = new Scanner(System.in);
         float media = 0;
-        boolean start = true;
 
             System.out.println("INFORME A TEMPERATURA MÉDIA DOS 6 PREIMEIROS MESES DO ANO, SEGUINDO A ORDEM DESSES " +
                     "MESES :");
@@ -28,9 +27,11 @@ public class Main {
 
 
             System.out.println("**************************");
-            System.out.println("MESES ACIMA DA MÉDIA DE :"+ media%.1f);
+            System.out.println("MESES ACIMA DA MÉDIA DE :"+ media%.2f);
+            System.out.println("**************************");
 
-            for (int i= 0; i < temperaturas.size(); i++ ) {
+
+            for (int i= 1; i < temperaturas.size(); i++ ) {
                 switch (i){
                     case(1):
                         if (temperaturas.get(i) > media) {
@@ -67,11 +68,11 @@ public class Main {
                 }
         }
 
- */
+
+
         List<String> perguntas = new ArrayList<>();
         int countSim=0;
 
-        Scanner scan = new Scanner(System.in);
         perguntas.add("Telefonou para a Vítima?");
         perguntas.add("Esteve no local do crime?");
         perguntas.add("Mora perto da Vítima?");
@@ -96,5 +97,7 @@ public class Main {
         }else{
             System.out.println("INOCENTE");
         }
+
+        scan.close();
     }
 }
