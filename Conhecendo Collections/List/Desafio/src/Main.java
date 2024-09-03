@@ -34,6 +34,7 @@ public class Main {
                     start= false;
                     break;
                 case 1:
+
                     System.out.println("Informe o titulo:" );
                     String nomeLivro = scan.nextLine();
 
@@ -49,6 +50,10 @@ public class Main {
 
                     meusLivros.add(new Livro(nomeLivro, autorLivro, generoLivro, anoLivro));
                     System.out.println("Livro Adicionado com sucesso!");
+
+//                  meusLivros.add(new Livro("Apanhador no campo de Centeio", "Douglas Smith", "Drama", 1980));
+//                  meusLivros.add(new Livro("O Gui do Mochileiro das Galaxias", "Douglas Adams", "Ficcao Cientifica", 1975));
+//                  meusLivros.add(new Livro("Marley e Eu", "John Gouth", "Romance", 2005));
                     break;
 
                 case 2:
@@ -71,18 +76,25 @@ public class Main {
                     break;
 
                 case 5:
-                    Set<Livro> meusLivrosPorAutor = new TreeSet<>(new ComparadorAutor());
+                    // Versão com Lambda
+                    //Set<Livro> meusLivrosPorAutor = new TreeSet<>((l1, l2)-> l1.getAutor().compareTo(l2.getAutor()));
+                    // Versão com Reference Method
+                    Set<Livro> meusLivrosPorAutor = new TreeSet<>(Comparator.comparing(Livro::getAutor));
+
                     meusLivrosPorAutor.addAll(meusLivros);
                     System.out.println(meusLivrosPorAutor);
                     break;
-
+                    
                 case 6:
-                    List<Livro> meusLivrosPorAnoLancamento = new ArrayList<>();
+                    // Versão Com o Lambda
+                    // Set<Livro> meusLivrosPorAnoLancamento = new TreeSet<>((livro1, livro2) -> Integer.compare(livro1.getAnoPublicacao(), livro2.getAnoPublicacao()));
+                    // Versão com Method Reference
+                    Set<Livro> meusLivrosPorAnoLancamento = new TreeSet<>(Comparator.comparing(Livro::getAnoPublicacao));
                     meusLivrosPorAnoLancamento.addAll(meusLivros);
-                    meusLivrosPorAnoLancamento.sort(new ComparatorAno());
 
                     System.out.println(meusLivrosPorAnoLancamento);
                     break;
+
                 case 7:
                     for (int i=0; i< meusLivros.size(); i++){
                         System.out.print("Índice: "+i+ " Livro: " +meusLivros.get(i).getTitulo()+"\n");
@@ -116,5 +128,6 @@ public class Main {
             }
         }
 
+        scan.close();
     }
 }

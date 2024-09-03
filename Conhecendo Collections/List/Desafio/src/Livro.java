@@ -1,4 +1,3 @@
-import java.util.Comparator;
 
 public class Livro implements Comparable<Livro>{
 

@@ -5,36 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2f99e213-d2ed-445c-a877-2e483d55ad70" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/List.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Set/OrdenacaoDeElementosSet/ExemplosDeOrdenacaoSet/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Set/OrdenacaoDeElementosSet/ExemplosDeOrdenacaoSet/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Set/OrdenacaoDeElementosSet/ExemplosDeOrdenacaoSet/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Set/OrdenacaoDeElementosSet/ExemplosDeOrdenacaoSet/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Set/OrdenacaoDeElementosSet/ExemplosDeOrdenacaoSet/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Set/OrdenacaoDeElementosSet/ExemplosDeOrdenacaoSet/ExemplosDeOrdenacaoSet.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Set/OrdenacaoDeElementosSet/ExemplosDeOrdenacaoSet/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Set/OrdenacaoDeElementosSet/ExemplosDeOrdenacaoSet/src/Serie.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Set/OrdenacaoDeElementosSet/ExerciciosPropostos/ExerciciosPropostos/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Set/OrdenacaoDeElementosSet/ExerciciosPropostos/ExerciciosPropostos/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Set/OrdenacaoDeElementosSet/ExerciciosPropostos/ExerciciosPropostos/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Set/OrdenacaoDeElementosSet/ExerciciosPropostos/ExerciciosPropostos/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Set/OrdenacaoDeElementosSet/ExerciciosPropostos/ExerciciosPropostos/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Set/OrdenacaoDeElementosSet/ExerciciosPropostos/ExerciciosPropostos/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Set/OrdenacaoDeElementosSet/ExerciciosPropostos/ExerciciosPropostos/ExerciciosPropostos.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Set/OrdenacaoDeElementosSet/ExerciciosPropostos/ExerciciosPropostos/src/Ex1/ArcoIris.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Set/OrdenacaoDeElementosSet/ExerciciosPropostos/ExerciciosPropostos/src/Ex1/Cor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Set/OrdenacaoDeElementosSet/ExerciciosPropostos/ExerciciosPropostos/src/Ex1/OrdemInversa.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Set/OrdenacaoDeElementosSet/ExerciciosPropostos/ExerciciosPropostos/src/Ex2/LinguagemFavorita.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Set/OrdenacaoDeElementosSet/ExerciciosPropostos/ExerciciosPropostos/src/Ex2/OrdenaAno.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Set/OrdenacaoDeElementosSet/ExerciciosPropostos/ExerciciosPropostos/src/Ex2/OrdenaIde.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Set/OrdenacaoDeElementosSet/ExerciciosPropostos/ExerciciosPropostos/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../estruturasDeDados/src/arvoreBinaria/ArvoreBinaria.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../estruturasDeDados/src/arvoreBinaria/ArvoreBinaria.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PropostaDeExercicio/src/ComparatorAno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Desafio/src/ComparatorAno.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Desafio/src/Livro.java" beforeDir="false" afterPath="$PROJECT_DIR$/Desafio/src/Livro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Desafio/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Desafio/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PropostaDeExercicio/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/PropostaDeExercicio/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,10 +21,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2lCqQZ7gMFDUJa3iuoEFeQH05Zc" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -56,11 +33,26 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "Application.Main.executor": "Run",
+    "Application.Unnamed.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true"
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/felip/Documents/Code/Cursos/DIO/formacao-Java/conhecendo Collections/list/desafio",
+    "run.code.analysis.last.selected.profile": "pProject Default"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="List" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

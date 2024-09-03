@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-
+import java.util.*;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -25,9 +22,9 @@ public class Main {
             media /= temperaturas.size();
 
 
-            System.out.println("**************************");
+            System.out.println("****************************");
             System.out.println("MESES ACIMA DA MÉDIA DE :" + String.format("%.2f", media));
-            System.out.println("**************************");
+            System.out.println("****************************");
 
 
             for (int i= 1; i < temperaturas.size(); i++ ) {
