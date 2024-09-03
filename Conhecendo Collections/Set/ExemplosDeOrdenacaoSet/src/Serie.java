@@ -3,12 +3,12 @@ import java.util.Objects;
 class Serie implements Comparable<Serie>{
     private String nome;
     private String genero;
-    Integer tempoEpidodio;
+    Integer tempoEpisodio;
 
     public Serie(String nome, String genero, Integer tempoEpidodio) {
         this.nome = nome;
         this.genero = genero;
-        this.tempoEpidodio = tempoEpidodio;
+        this.tempoEpisodio = tempoEpidodio;
     }
 
     public String getNome() {
@@ -27,12 +27,12 @@ class Serie implements Comparable<Serie>{
         this.genero = genero;
     }
 
-    public Integer getTempoEpidodio() {
-        return tempoEpidodio;
+    public Integer getTempoEpisodio() {
+        return tempoEpisodio;
     }
 
     public void setTempoEpidodio(Integer tempoEpidodio) {
-        this.tempoEpidodio = tempoEpidodio;
+        this.tempoEpisodio = tempoEpidodio;
     }
 
     @Override
@@ -40,7 +40,7 @@ class Serie implements Comparable<Serie>{
         return "{" +
                 "nome='" + nome + '\'' +
                 ", genero='" + genero + '\'' +
-                ", tempoEpidodio=" + tempoEpidodio +
+                ", tempoEpidodio=" + tempoEpisodio +
                 '}';
     }
 
@@ -49,12 +49,12 @@ class Serie implements Comparable<Serie>{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Serie serie = (Serie) o;
-        return Objects.equals(nome, serie.nome) && Objects.equals(genero, serie.genero) && Objects.equals(tempoEpidodio, serie.tempoEpidodio);
+        return Objects.equals(nome, serie.nome) && Objects.equals(genero, serie.genero) && Objects.equals(tempoEpisodio, serie.tempoEpisodio);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nome, genero, tempoEpidodio);
+        return Objects.hash(nome, genero, tempoEpisodio);
     }
 
     // Comparable criado para podermos ordenar os dados armazenados em nosso treeSet de Serie.
@@ -66,6 +66,6 @@ class Serie implements Comparable<Serie>{
         int genero = this.getGenero().compareTo(o.getGenero());
         if (genero !=0) return genero;
 
-        return (Integer.compare(this.getTempoEpidodio(), o.getTempoEpidodio()));
+        return (Integer.compare(this.getTempoEpisodio(), o.getTempoEpisodio()));
     }
 }
