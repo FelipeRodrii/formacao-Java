@@ -95,12 +95,14 @@ public class Main{
         System.out.println("--------------------------------------------------------------");
 
         //Todo: Exiba a média da população deste dicionário de estados
-        int somaTotal=0;
+        int somaTotal;
 //        Iterator<Integer> iterator = estadosPopulacao.values().iterator();
 //
 //        while(iterator.hasNext())
 //            somaTotal+= iterator.next();
-        somaTotal = estadosPopulacao.entrySet().stream().mapToInt(Map.Entry::getValue).sum();
+
+//      somaTotal = estadosPopulacao.entrySet().stream().mapToInt(Map.Entry::getValue).sum(); -> 1° Forma de Fazer;
+        somaTotal = estadosPopulacao.values().stream().mapToInt(valor -> valor).sum();
 
         System.out.println("A média populacional nestes estados é: "+ (somaTotal/ estadosPopulacao.size()));
         System.out.println("--------------------------------------------------------------");
@@ -122,9 +124,11 @@ public class Main{
         //valor foi sorteado
         System.out.println("DESAFIO DO DADO:");
         Dado dadoBranco = new Dado();
-        List sorteados = new ArrayList<>();
+        List<Integer> sorteados = new ArrayList<>();
 
-        sorteados.addAll(dadoBranco.lancarDados(100));
+//      sorteados.addAll(dadoBranco.lancarDados(100)); -> Forma insegura
+        dadoBranco.lancarDados(100).addAll(sorteados);
+
         System.out.println(dadoBranco.agrupamentoSorteados(sorteados));
 
         /*Todo: Dadas as seguintes informações de id e contato, crie um dicionário e ordene este dicionário exibindo
