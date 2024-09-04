@@ -1,9 +1,9 @@
 import java.util.*;
-import java.util.function.Function;
+import java.util.function.Consumer;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
+public class Main{
     public static void main(String[] args) {
 
         /* Exercício 1:
@@ -14,7 +14,9 @@ public class Main {
          * Estado = RN - População = 3.534,265
          */
 
-        //Todo: Crie um dicionário e relacione os estados e suas populações;
+        Consumer<Map.Entry<String, Integer>> detalhesEstados = entry -> System.out.println("Estado: "+entry.getKey()+
+                " População: "+entry.getValue());
+        //Todo: Crie um dicionário e relacione os estados e suas populações | Update: Use Stream
         Map<String, Integer> estadosPopulacao = new HashMap<>(){{
             put("PE", 9616621);
             put("AL", 3351543);
@@ -23,27 +25,28 @@ public class Main {
         }};
         System.out.println("Imprimindo Dicionário Criado: ");
         Set<Map.Entry<String, Integer>> entradas = estadosPopulacao.entrySet();
-        for (Map.Entry<String, Integer> entra: entradas)
-                System.out.println("Estado: "+entra.getKey()+ " População: "+entra.getValue());
+        entradas.forEach(detalhesEstados);
 
         System.out.println("--------------------------------------------------------------");
 
-        //Todo Substitua a população do estadodo RN por 3.534,165
+        //Todo Substitua a população do estadodo RN por 3.534,165 | Update: Use Stream
         System.out.println("Mudança no Estado RN: ");
         estadosPopulacao.put("RN", 3534165);
-        entradas = estadosPopulacao.entrySet();
-        for (Map.Entry<String, Integer> entrada: entradas)
-            if (entrada.getKey().equals("RN"))
-                System.out.println("Estado: "+ entrada.getKey() + " População: "+ entrada.getValue());
+//      entradas = estadosPopulacao.entrySet();
+//        for (Map.Entry<String, Integer> entrada: entradas)
+//            if (entrada.getKey().equals("RN"))
+//                System.out.println("Estado: "+ entrada.getKey() + " População: "+ entrada.getValue());
+        estadosPopulacao.entrySet().stream().filter(entry -> entry.getKey().equals("RN")).forEach(detalhesEstados);
         System.out.println("--------------------------------------------------------------");
 
-        //Todo: Confira se o estado PB está no dicionário, caso não adicione: PB - 4.039,277
+        //Todo: Confira se o estado PB está no dicionário, caso não adicione: PB - 4.039,277 | Update: Use Stream
         System.out.println("Adição do Estado PB: ");
         if (!estadosPopulacao.containsKey("PB"))
             estadosPopulacao.put("PB", 4039277);
-        entradas = estadosPopulacao.entrySet();
-        for(Map.Entry<String, Integer> entrada: entradas)
-            System.out.println("Estado: "+ entrada.getKey()+ " população: "+ entrada.getValue());
+//        entradas = estadosPopulacao.entrySet();
+//        for(Map.Entry<String, Integer> entrada: entradas)
+//            System.out.println("Estado: "+ entrada.getKey()+ " população: "+ entrada.getValue());
+        estadosPopulacao.entrySet().forEach(detalhesEstados);
         System.out.println("--------------------------------------------------------------");
 
         //Todo: Exiba a população PE
@@ -68,19 +71,23 @@ public class Main {
 
         //Todo: Exiba o estado com a menor população e sua quantidade
         int menorPopulacao= Collections.min(estadosPopulacao.values());
-        entradas = estadosPopulacao.entrySet();
 
-        for (Map.Entry<String, Integer> entrada: entradas)
-            if(entrada.getValue().equals(menorPopulacao))
-                System.out.println("Estado com Menor População: " +entrada.getKey()+ " Populção: " +entrada.getValue());
+//        entradas = estadosPopulacao.entrySet();
+//        for (Map.Entry<String, Integer> entrada: entradas)
+//            if(entrada.getValue().equals(menorPopulacao))
+//                System.out.println("Estado com Menor População: " +entrada.getKey()+ " Populção: " +entrada.getValue());
+        estadosPopulacao.entrySet().stream().filter(entry -> entry.getValue().equals(menorPopulacao))
+                .forEach(entry -> System.out.println("Estado com a menor população: " +entry.getKey()+ " População: " +entry.getValue()));
         System.out.println("--------------------------------------------------------------");
 
         //Todo: Exiba o estado com a maior população e sua quantidade
         int maiorPopulacao= Collections.max(estadosPopulacao.values());
 
-        for (Map.Entry<String, Integer> entrada: entradas)
-            if (entrada.getValue().equals(maiorPopulacao))
-                System.out.println("Estado com Maior População: " +entrada.getKey()+ " Populção:" +entrada.getValue());
+//        for (Map.Entry<String, Integer> entrada: entradas)
+//            if (entrada.getValue().equals(maiorPopulacao))
+//                System.out.println("Estado com Maior População: " +entrada.getKey()+ " Populção:" +entrada.getValue());
+        estadosPopulacao.entrySet().stream().filter(entry -> entry.getValue().equals(maiorPopulacao))
+                .forEach(entry -> System.out.println("Estado com a maior população: "+entry.getKey()+ "População: " +entry.getValue()));
         System.out.println("--------------------------------------------------------------");
 
         //Todo:Exiba a soma da população desses estados
@@ -89,21 +96,19 @@ public class Main {
 
         //Todo: Exiba a média da população deste dicionário de estados
         int somaTotal=0;
-        Iterator<Integer> iterator = estadosPopulacao.values().iterator();
-
-        while(iterator.hasNext())
-            somaTotal+= iterator.next();
+//        Iterator<Integer> iterator = estadosPopulacao.values().iterator();
+//
+//        while(iterator.hasNext())
+//            somaTotal+= iterator.next();
+        somaTotal = estadosPopulacao.entrySet().stream().mapToInt(Map.Entry::getValue).sum();
 
         System.out.println("A média populacional nestes estados é: "+ (somaTotal/ estadosPopulacao.size()));
         System.out.println("--------------------------------------------------------------");
 
         //Todo: Remova os estados com a população menor que 4,000.000;
         System.out.println("Removendo estados com a população abaixo de 400000: ");
-        Iterator<Map.Entry<String, Integer>> iterator1 = estadosPopulacao.entrySet().iterator();
 
-        while (iterator1.hasNext())
-            if (iterator1.next().getValue() < 4000000)
-                iterator1.remove();
+        estadosPopulacao.entrySet().removeIf(entry -> entry.getValue() < 4000000);
 
         System.out.println(estadosPopulacao);
         System.out.println("--------------------------------------------------------------");
@@ -130,6 +135,9 @@ public class Main {
         * id= 3 - Contato - nome: Jon, numero: 1111;
         *
         */
+
+        Consumer<Map.Entry<Integer, Contato>> detalhesContato =
+                entry -> System.out.println(entry.getKey() + " - " + entry.getValue().getNumero() + " - " + entry.getValue().getNome());
 
         System.out.println("Proposta - 3");
         System.out.println("--\tOrdem aleatória\t--");
@@ -171,12 +179,8 @@ public class Main {
          */
 
         Set<Map.Entry<Integer,Contato>> meusContatosTelefone = new TreeSet<>(Comparator.comparing(entry -> entry.getValue().getNumero()));
-
         meusContatosTelefone.addAll(meusContatos.entrySet());
-
-        for (Map.Entry<Integer, Contato> entry: meusContatosTelefone) {
-            System.out.println(entry.getKey() + " - " + entry.getValue().getNumero() + " - " + entry.getValue().getNome());
-        }
+        meusContatosTelefone.forEach(detalhesContato);
 
         System.out.println("--\tOrdem nome contato\t--");
         /*
@@ -194,35 +198,11 @@ public class Main {
         // assume como seu valor o tipo que estamos passando na inicialização da variável principal ao qual se aplica
         // (meusContatosNome) que nesse caso é Set<Map.Entry<>> e assim a variavel que representa os dados (entry)
         // irá ter os métodos deste nosso tipo principal.
+
         Set<Map.Entry<Integer, Contato>> meusContatosNome =
                 new TreeSet<>(Comparator.comparing(entry -> entry.getValue().getNome()));
         meusContatosNome.addAll(meusContatos.entrySet());
+        meusContatosNome.forEach(detalhesContato);
 
-        for(Map.Entry<Integer, Contato> entry: meusContatosNome){
-            System.out.println(entry.getKey()+ " - " +entry.getValue().getNome());
-        }
-
-
-
-            }
-        }
-
-/*
- * Trecho comentado poos utilizamos de Lambda para a criação destes métodos Comparator diretamente nas estruturas que
- *  iriam utiliza-los
-class ComparatorNumero implements Comparator<Map.Entry<Integer, Contato>>{
-
-    @Override
-    public int compare(Map.Entry<Integer, Contato> c1, Map.Entry<Integer, Contato> c2) {
-        return Integer.compare(c1.getValue().getNumero(), c2.getValue().getNumero());
     }
 }
-*
-class ComparatorNome implements Comparator<Map.Entry<Integer, Contato>>{
-
-    @Override
-    public int compare(Map.Entry<Integer, Contato> c1, Map.Entry<Integer, Contato> c2) {
-        return c1.getValue().getNome().compareTo(c2.getValue().getNome());
-    }
-}
- */

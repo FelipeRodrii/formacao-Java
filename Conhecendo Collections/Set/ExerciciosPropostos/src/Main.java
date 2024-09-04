@@ -95,6 +95,6 @@ public class Main {
 
         minhasLinguagens3.addAll(minhasLinguagens);
         minhasLinguagens3.forEach(detalhesLinguagem);
-        
+
     }
 }
