@@ -1,6 +1,7 @@
 import Ex1.*;
 import Ex2.*;
 import java.util.*;
+import java.util.function.Consumer;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -62,18 +63,23 @@ public class Main {
         Ao final, exiba as linguagens no console, um abaixo da outra
          */
 
+        //Todo: Padronizar os prints com o Consumer
+        Consumer<LinguagemFavorita> detalhesLinguagem = linguagem ->
+                System.out.println(linguagem.getIde() +" - "+ linguagem.getNome() +" - "+ linguagem.getAnoDeCriacao());
+
         Set<LinguagemFavorita> minhasLinguagens = new LinkedHashSet<>();
         minhasLinguagens.add(new LinguagemFavorita("Java", 1996, "Intellij"));
         minhasLinguagens.add(new LinguagemFavorita("Python", 1989, "VSCode"));
         minhasLinguagens.add(new LinguagemFavorita("JavaScript", 1995, "NetBeans"));
 
         System.out.println("\t-- Ordem de Inserção --\t");
-        System.out.println(minhasLinguagens);
+        minhasLinguagens.forEach(detalhesLinguagem);
+
 
         Set<LinguagemFavorita> minhasLinguagens1 = new TreeSet<>(minhasLinguagens);
-
         System.out.println("\t-- Ordem Natural (Nome) --\t");
-        System.out.println(minhasLinguagens1);
+        minhasLinguagens1.forEach(detalhesLinguagem);
+
 
         System.out.println("\t-- IDE --\t");
         Set<LinguagemFavorita> minhasLinguagens2 = new TreeSet<>(new OrdenaIde()){{
@@ -81,8 +87,8 @@ public class Main {
             add(new LinguagemFavorita("Python", 1989, "VSCode"));
             add(new LinguagemFavorita("JavaScript", 1995, "NetBeans"));
         }};
-        for (LinguagemFavorita l2 : minhasLinguagens2)
-            System.out.println(l2.getIde() +" - "+  l2.getNome() + " - " + l2.getAnoDeCriacao()+ " - ");
+        minhasLinguagens2.forEach(detalhesLinguagem);
+
 
         System.out.println("\t-- Ano de criação e nome --\t");
         Set<LinguagemFavorita> minhasLinguagens3 = new TreeSet<>(new OrdenaAno()){{
@@ -90,12 +96,7 @@ public class Main {
             add(new LinguagemFavorita("Python", 1989, "VSCode"));
             add(new LinguagemFavorita("JavaScript", 1995, "NetBeans"));
         }};
-        for (LinguagemFavorita l3 : minhasLinguagens3)
-            System.out.print(l3.getIde() +" - "+ l3.getNome() +" - "+ l3.getAnoDeCriacao() + " - ");
-
-
-
-
+        minhasLinguagens3.forEach(detalhesLinguagem);
 
 
 
