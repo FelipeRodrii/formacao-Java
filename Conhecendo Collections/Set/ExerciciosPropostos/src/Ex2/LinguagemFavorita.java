@@ -31,7 +31,7 @@ public class LinguagemFavorita implements Comparable<LinguagemFavorita> {
         this.anoDeCriacao = anoDeCriacao;
     }
 
-    public String getIde() {
+    public String getIDE() {
         return ide;
     }
 
@@ -70,6 +70,6 @@ public class LinguagemFavorita implements Comparable<LinguagemFavorita> {
         int ano = Integer.compare(this.getAnoDeCriacao(), l.getAnoDeCriacao());
         if(ano != 0) return ano;
 
-        return this.getIde().compareTo(l.getIde());
+        return this.getIDE().compareTo(l.getIDE());
     }
 }

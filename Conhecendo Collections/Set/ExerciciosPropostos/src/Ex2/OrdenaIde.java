@@ -7,7 +7,7 @@ public class OrdenaIde implements Comparator<LinguagemFavorita> {
     @Override
     public int compare(LinguagemFavorita l1, LinguagemFavorita l2) {
 
-        return l1.getIde().compareTo(l2.getIde());
+        return l1.getIDE().compareTo(l2.getIDE());
     }
 }
 

@@ -65,7 +65,7 @@ public class Main {
 
         //Todo: Padronizar os prints com o Consumer
         Consumer<LinguagemFavorita> detalhesLinguagem = linguagem ->
-                System.out.println(linguagem.getIde() +" - "+ linguagem.getNome() +" - "+ linguagem.getAnoDeCriacao());
+                System.out.println(linguagem.getIDE() +" - "+ linguagem.getNome() +" - "+ linguagem.getAnoDeCriacao());
 
         Set<LinguagemFavorita> minhasLinguagens = new LinkedHashSet<>();
         minhasLinguagens.add(new LinguagemFavorita("Java", 1996, "Intellij"));
@@ -80,25 +80,21 @@ public class Main {
         System.out.println("\t-- Ordem Natural (Nome) --\t");
         minhasLinguagens1.forEach(detalhesLinguagem);
 
-
+        // TODO: Implementar a ordenação com Lambda ou Consumer
         System.out.println("\t-- IDE --\t");
-        Set<LinguagemFavorita> minhasLinguagens2 = new TreeSet<>(new OrdenaIde()){{
-            add(new LinguagemFavorita("Java", 1996, "Intellij"));
-            add(new LinguagemFavorita("Python", 1989, "VSCode"));
-            add(new LinguagemFavorita("JavaScript", 1995, "NetBeans"));
-        }};
+        Set<LinguagemFavorita> minhasLinguagens2 = new TreeSet<>(Comparator.comparing(LinguagemFavorita::getIDE));
+
+        minhasLinguagens2.addAll(minhasLinguagens);
         minhasLinguagens2.forEach(detalhesLinguagem);
 
-
+        // TODO: Implementar a ordenação com Lambda ou Consumer
         System.out.println("\t-- Ano de criação e nome --\t");
-        Set<LinguagemFavorita> minhasLinguagens3 = new TreeSet<>(new OrdenaAno()){{
-            add(new LinguagemFavorita("Java", 1996, "Intellij"));
-            add(new LinguagemFavorita("Python", 1989, "VSCode"));
-            add(new LinguagemFavorita("JavaScript", 1995, "NetBeans"));
-        }};
+        Set<LinguagemFavorita> minhasLinguagens3 =
+                new TreeSet<>(Comparator.comparing(LinguagemFavorita::getAnoDeCriacao)
+                        .thenComparing(LinguagemFavorita::getNome));
+
+        minhasLinguagens3.addAll(minhasLinguagens);
         minhasLinguagens3.forEach(detalhesLinguagem);
-
-
-
+        
     }
 }
