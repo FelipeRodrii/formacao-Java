@@ -158,11 +158,11 @@ public class Main{
             put(4, new Contato("Cami", 1111));
             put(3, new Contato("Jon", 2222));
         }};
-        System.out.println(meusContato1);
+        meusContato1.entrySet().forEach(detalhesContato);
 
         System.out.println("--\tOrdem id\t--");
         Map<Integer, Contato> meusContatosPorID = new TreeMap<>(meusContatos);
-        System.out.println(meusContatosPorID);
+        meusContatosPorID.entrySet().forEach(detalhesContato);
 
         System.out.println("--\tOrdem número telefone\t--");
         /*
