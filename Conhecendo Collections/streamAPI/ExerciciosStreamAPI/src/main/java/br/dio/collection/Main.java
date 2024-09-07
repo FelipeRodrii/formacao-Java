@@ -20,7 +20,7 @@ public class Main {
         List<Integer> numerosAleatoriosInteiros = new ArrayList<>(numerosAleatorios.stream().map(Integer::parseInt).toList());
         numerosAleatoriosInteiros.forEach(i -> System.out.println(i.getClass() + " " +i));
 
-        System.out.print("Numeros pares maiores que 2:");
+        System.out.print("Numeros pares maiores que 2: ");
         List<Integer> numerosaleatoriosParesMaiorDois =
                 numerosAleatoriosInteiros.stream()
                         .filter(s -> (s % 2 == 0 && s > 2))
@@ -29,8 +29,8 @@ public class Main {
                 numerosaleatoriosParesMaiorDois.forEach(s -> System.out.print(s +" "));
                 System.out.println();
 
-        // O mapToInt, além de fazer a conversão dos tipos igual o map, permite que usemos outras funções para numeros, como sum() e average()
-        //Integer::parseInt -> Tranforma Strings em objetos do tiopo Integer
+        // O mapToInt, além de fazer a conversão dos tipos igual o map, permite que usemos outras funções para numeros, como sum() e average() etc...
+        //Integer::parseInt → Tranforma ‘Strings’ em objetos do tipo Integer
         System.out.print("Média: ");
         numerosAleatorios.stream().mapToInt(Integer::parseInt).average().ifPresent(System.out::println);
 
