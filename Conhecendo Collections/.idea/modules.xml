@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Conhecendo Collections.iml" filepath="$PROJECT_DIR$/.idea/Conhecendo Collections.iml" />
+      <module fileurl="file://$PROJECT_DIR$/List/Desafio/Desafio.iml" filepath="$PROJECT_DIR$/List/Desafio/Desafio.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Set/Desafios/Desafios.iml" filepath="$PROJECT_DIR$/Set/Desafios/Desafios.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Map/ExemploOrdenacaoMap/ExemploOrdenacaoMap.iml" filepath="$PROJECT_DIR$/Map/ExemploOrdenacaoMap/ExemploOrdenacaoMap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Set/ExemplosDeOrdenacaoSet/ExemplosDeOrdenacaoSet.iml" filepath="$PROJECT_DIR$/Set/ExemplosDeOrdenacaoSet/ExemplosDeOrdenacaoSet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Map/ExemplosMap/ExemplosMap.iml" filepath="$PROJECT_DIR$/Map/ExemplosMap/ExemplosMap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Set/ExemplosMetodos/ExemplosMetodos.iml" filepath="$PROJECT_DIR$/Set/ExemplosMetodos/ExemplosMetodos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Set/ExerciciosPropostos/ExerciciosPropostos.iml" filepath="$PROJECT_DIR$/Set/ExerciciosPropostos/ExerciciosPropostos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Map/ExerciciosPropostos/ExerciciosPropostos1.iml" filepath="$PROJECT_DIR$/Map/ExerciciosPropostos/ExerciciosPropostos1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/List/PropostaDeExercicio/PropostaDeExercicio.iml" filepath="$PROJECT_DIR$/List/PropostaDeExercicio/PropostaDeExercicio.iml" />
+    </modules>
+  </component>
+</project>

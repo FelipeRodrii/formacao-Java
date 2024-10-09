@@ -82,6 +82,7 @@ public class Main {
 
         // TODO: Implementar a ordenação com Lambda ou Consumer
         System.out.println("\t-- IDE --\t");
+        //Set<LinguagemFavorita> minhasLinguagens2 = new TreeSet<>((l1, l2) -> l1.getIDE().compareTo(l2.getIDE()));
         Set<LinguagemFavorita> minhasLinguagens2 = new TreeSet<>(Comparator.comparing(LinguagemFavorita::getIDE));
 
         minhasLinguagens2.addAll(minhasLinguagens);
@@ -89,6 +90,14 @@ public class Main {
 
         // TODO: Implementar a ordenação com Lambda ou Consumer
         System.out.println("\t-- Ano de criação e nome --\t");
+        /*Set<LinguagemFavorita> minhasLinguagens3 = new TreeSet<>((l1,l2) -> {
+            int anoCompare = Integer.compare(l1.getAnoDeCriacao(), l2.getAnoDeCriacao());
+            if(anoCompare != 0){
+                return anoCompare;
+            }else{
+                return l1.getNome().compareTo(l2.getNome());
+            }
+        });*/
         Set<LinguagemFavorita> minhasLinguagens3 =
                 new TreeSet<>(Comparator.comparing(LinguagemFavorita::getAnoDeCriacao)
                         .thenComparing(LinguagemFavorita::getNome));
