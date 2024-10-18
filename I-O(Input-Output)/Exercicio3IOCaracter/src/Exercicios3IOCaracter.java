@@ -53,14 +53,14 @@ public class Exercicios3IOCaracter {
             line = br.readLine(); // pegue a próxima linha do teclado
         }while(!line.equalsIgnoreCase("fim"));
 
-        bw.flush();
+        bw.flush();// terminado o laço, descarrega as informações capturadas pelo teclado no arquivo recomendações.txt
         br.close();
         bw.close();
 
     }
 
     public static void main(String[] args) throws IOException {
-        copiarArquivo("Recomendações.txt");
+        copiarArquivo("Recomendações.txt"); s
 
     }
 }
