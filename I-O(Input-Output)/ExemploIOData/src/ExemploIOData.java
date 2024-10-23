@@ -21,7 +21,7 @@ public class ExemploIOData {
         System.out.println();
 
         do {
-            
+
             ps.print("Nome do produto: ");
             String nome = scan.next();//armazena o 'input' da variável.
             dos.writeUTF(nome);//escrevendo no documento

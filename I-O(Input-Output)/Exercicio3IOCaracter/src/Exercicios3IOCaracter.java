@@ -60,7 +60,7 @@ public class Exercicios3IOCaracter {
     }
 
     public static void main(String[] args) throws IOException {
-        copiarArquivo("Recomendações.txt"); s
+        copiarArquivo("Recomendações.txt");
 
     }
 }

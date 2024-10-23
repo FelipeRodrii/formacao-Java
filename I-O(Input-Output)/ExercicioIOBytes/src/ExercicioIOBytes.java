@@ -4,7 +4,6 @@ import static java.lang.System.currentTimeMillis;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class ExercicioIOBytes {
-
     public static  void copiarArquivoByte(String arquivo) throws IOException {
         File f = new File(arquivo);
         String nomeArquivo = f.getName();
@@ -36,7 +35,6 @@ public class ExercicioIOBytes {
 
     }
 
-
     private static void copiarArquivoCaracter(String arquivo) throws IOException {
         File file = new File(arquivo);
         BufferedReader br = new BufferedReader(new FileReader(file.getName()));
@@ -61,7 +59,6 @@ public class ExercicioIOBytes {
 
     }
 
-
     public static void main(String[] args) throws IOException {
         long tempoInicial = currentTimeMillis();
 
@@ -69,7 +66,6 @@ public class ExercicioIOBytes {
         //copiarArquivoCaracter("Roteiro.txt");
 
         System.out.println("O método foi executado em " + (currentTimeMillis() - tempoInicial));
-
 
     }
 
