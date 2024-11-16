@@ -7,7 +7,9 @@ public class CadastrarPessoa {
     private ApiDosCorreios apiDosCorreios;
 
     public void cadastrarPessoa(final ApiDosCorreios apiDosCorreios){
+
         this.apiDosCorreios= apiDosCorreios;
+
     }
 
     public Pessoa cadastrarPessoa(String nome, String documento, LocalDate nascimento, String cep){

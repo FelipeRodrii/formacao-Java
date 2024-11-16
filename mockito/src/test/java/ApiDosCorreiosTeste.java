@@ -29,7 +29,7 @@ public class ApiDosCorreiosTeste {
     void retornoObjetoQuandoEspecificoValorEhPassado2(){
         when(apiDosCorreios.buscaDadosComBaseNoCep("787878")).thenReturn(new DadosLocalizacao("AM", "Manaus", "Rua Grajaúna", "casa", "Lago Azul"));
 
-        DadosLocalizacao dadosLocalizacao = apiDosCorreios.buscaDadosComBaseNoCep("78787878");
+        DadosLocalizacao dadosLocalizacao = apiDosCorreios.buscaDadosComBaseNoCep("787878");
 
         assertEquals("AM", dadosLocalizacao.getUf());
     } 

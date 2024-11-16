@@ -15,7 +15,6 @@ public class ContaTeste {
     @Test
     void verificaSeChamouMetodoDebita(){
         conta.pagarBoleto(300d);
-        Mockito.verify(conta).debita(300d);
     }
 
     @Test
@@ -27,6 +26,8 @@ public class ContaTeste {
         inOrder.verify(conta).pagarBoleto(300d);
         inOrder.verify(conta).debita(300d);
         inOrder.verify(conta).enviarCreditoParaEmissor(300);
+        Mockito.verify(conta).debita(300d);
+
     }
 
     @Test

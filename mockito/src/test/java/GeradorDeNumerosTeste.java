@@ -16,7 +16,6 @@ public class GeradorDeNumerosTeste {
     @Test
     void validaGeracaoListaDeNumeros(){
         MockedStatic<GeradorDeNumeros> gerador = Mockito.mockStatic(GeradorDeNumeros.class);
-
         List<Integer> integers = List.of(1,2,3,4,5,6,7,8);
         gerador.when(() -> GeradorDeNumeros.gerarNumerosAleatorios(anyInt())).thenReturn(integers);
         Assertions.assertEquals(integers, GeradorDeNumeros.gerarNumerosAleatorios(8));

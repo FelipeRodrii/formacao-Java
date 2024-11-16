@@ -33,6 +33,4 @@ public class ServicoEnvioEmailTeste {
         Assertions.assertEquals(Formato.HTML, emailCapturado.getFormato());
 
     }
-
-
 }
