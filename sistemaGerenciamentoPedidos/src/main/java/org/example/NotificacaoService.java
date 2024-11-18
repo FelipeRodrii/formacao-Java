@@ -1,8 +1,6 @@
 package org.example;
 
-public class NotificacaoService {
+interface NotificacaoService {
 
-    public void enviarNotificacao(Pedido pedido){
-        System.out.printf("Notificação enviada");
-    }
+    void enviarNotificacao();
 }

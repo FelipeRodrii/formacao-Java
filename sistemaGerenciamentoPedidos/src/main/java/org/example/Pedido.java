@@ -4,10 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Pedido {
+    private String cliente;
     private List<Produto> produtos;
     private boolean finalizado;
 
-    public Pedido() {
+    public String getCliente() {
+        return cliente;
+    }
+
+    public Pedido(String cliente) {
+        this.cliente= cliente;
         this.produtos = new ArrayList<>();
         this.finalizado = false;
     }
