@@ -21,18 +21,25 @@ public class GerenciadorDePedidos {
 
     public List<Pedido> buscarPedidoPorCliente(String cliente){
         //Pedido pedido = pedidos.stream().allMatch(p -> p.getCliente().equalsIgnoreCase(cliente));
-         List<Pedido> pedidoPorCliente =
-                 pedidos.stream().filter(p -> p.getCliente().equalsIgnoreCase(cliente)).toList();
-         return pedidoPorCliente;
+        try{
+            List<Pedido> pedidoPorCliente =
+                    pedidos.stream().filter(p -> p.getCliente().equalsIgnoreCase(cliente)).toList();
+            return pedidoPorCliente;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public List<Pedido> listarPedidosPorCategoria(String categoria){
-        List<Pedido> pedidosPorCategoria =
-                pedidos.stream().filter(pedido -> pedido.getProdutos()
-                        .stream().filter(produto -> produto.getCategoria().equalsIgnoreCase(categoria)).isParallel())
-                        .toList();
+        try {
+            List<Pedido> pedidosPorCategoria = pedidos.stream().filter(pedido -> pedido.getProdutos()
+                    .stream().anyMatch(produto -> produto.getCategoria()
+                            .equalsIgnoreCase(categoria))).toList();
+            return pedidosPorCategoria;
 
-        return pedidosPorCategoria;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public String enviarNotificacaoEmail(){
