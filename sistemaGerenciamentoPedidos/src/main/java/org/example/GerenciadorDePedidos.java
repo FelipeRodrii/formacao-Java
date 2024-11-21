@@ -3,6 +3,8 @@ package org.example;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.util.Arrays.stream;
+
 public class GerenciadorDePedidos {
 
     private List<Pedido> pedidos;
@@ -17,9 +19,11 @@ public class GerenciadorDePedidos {
         pedidos.add(pedido);
     }
 
-    public void buscarPedidoPorCliente(String cliente){
+    public List<Pedido> buscarPedidoPorCliente(String cliente){
         //Pedido pedido = pedidos.stream().allMatch(p -> p.getCliente().equalsIgnoreCase(cliente));
-         pedidos.stream().filter(p -> p.getCliente().equalsIgnoreCase(cliente)).forEach(System.out::println);
+         List<Pedido> pedidoPorCliente =
+                 pedidos.stream().filter(p -> p.getCliente().equalsIgnoreCase(cliente)).toList();
+         return pedidoPorCliente;
     }
 
     public List<Pedido> listarPedidosPorCategoria(String categoria){
@@ -40,13 +44,5 @@ public class GerenciadorDePedidos {
         notificacaoService = new NotificacaoSMS();
         return notificacaoService.enviarNotificacao();
     }
-
-
-
-
-
-
-
-
 
 }
