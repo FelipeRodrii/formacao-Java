@@ -2,8 +2,6 @@ package org.example;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
 
 public class GerenciadorDePedidos {
 
@@ -29,10 +27,19 @@ public class GerenciadorDePedidos {
                 pedidos.stream().filter(pedido -> pedido.getProdutos()
                         .stream().filter(produto -> produto.getCategoria().equalsIgnoreCase(categoria)).isParallel())
                         .toList();
+
         return pedidosPorCategoria;
     }
 
+    public String enviarNotificacaoEmail(){
+        notificacaoService = new NotificacaoEmail();
+        return notificacaoService.enviarNotificacao();
+    }
 
+    public String enviarNotificacaoSMS(){
+        notificacaoService = new NotificacaoSMS();
+        return notificacaoService.enviarNotificacao();
+    }
 
 
 

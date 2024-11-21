@@ -1,9 +1,11 @@
 package org.example;
 
-public class NotificacaoEmail implements NotificacaoService{
+public class NotificacaoEmail implements NotificacaoService {
 
     @Override
-    public void enviarNotificacao() {
-        System.out.printf("Enviando notiicação por Email...");
+    public String enviarNotificacao() {
+        String retorno = ("Enviando notiicação por Email...");
+        return retorno;
     }
 }
+
