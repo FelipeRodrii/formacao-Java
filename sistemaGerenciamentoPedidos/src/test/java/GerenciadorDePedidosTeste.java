@@ -34,6 +34,7 @@ public class GerenciadorDePedidosTeste {
 
     @Test
     public void validaCriacaoPedido(){
+        criarPedidosParaTeste();
         gerenciadorDePedidos.criarPedido(pedidos.get(1));
     }
 
@@ -55,7 +56,11 @@ public class GerenciadorDePedidosTeste {
 
     @Test
     public void validarEnvioNotificacaoEmail(){
-        
+       assertEquals("Enviando notiicação por Email...",  gerenciadorDePedidos.enviarNotificacaoEmail());
+    }
+    @Test
+    public void validarEnvioNotificacaoSMS(){
+       assertEquals("Enviando notificação por SMS...",  gerenciadorDePedidos.enviarNotificacaoSMS());
     }
 
     public void criarPedidosParaTeste(){
