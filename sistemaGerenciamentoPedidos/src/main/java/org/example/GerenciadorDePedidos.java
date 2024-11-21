@@ -23,4 +23,23 @@ public class GerenciadorDePedidos {
         //Pedido pedido = pedidos.stream().allMatch(p -> p.getCliente().equalsIgnoreCase(cliente));
          pedidos.stream().filter(p -> p.getCliente().equalsIgnoreCase(cliente)).forEach(System.out::println);
     }
+
+    public List<Pedido> listarPedidosPorCategoria(String categoria){
+        List<Pedido> pedidosPorCategoria =
+                pedidos.stream().filter(pedido -> pedido.getProdutos()
+                        .stream().filter(produto -> produto.getCategoria().equalsIgnoreCase(categoria)).isParallel())
+                        .toList();
+        return pedidosPorCategoria;
+    }
+
+
+
+
+
+
+
+
+
+
+
 }

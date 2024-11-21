@@ -1,6 +1,6 @@
 package org.example;
 
-interface NotificacaoService {
+public interface NotificacaoService {
 
     void enviarNotificacao();
 }

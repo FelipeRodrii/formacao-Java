@@ -12,6 +12,10 @@ public class Pedido {
         return cliente;
     }
 
+    public List<Produto> getProdutos(){
+        return produtos;
+    }
+
     public Pedido(String cliente) {
         this.cliente= cliente;
         this.produtos = new ArrayList<>();
@@ -45,4 +49,5 @@ public class Pedido {
             e.printStackTrace();
         }
     }
+
 }
