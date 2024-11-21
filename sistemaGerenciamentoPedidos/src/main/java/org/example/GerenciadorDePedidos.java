@@ -20,7 +20,6 @@ public class GerenciadorDePedidos {
     }
 
     public List<Pedido> buscarPedidoPorCliente(String cliente){
-        //Pedido pedido = pedidos.stream().allMatch(p -> p.getCliente().equalsIgnoreCase(cliente));
         try{
             List<Pedido> pedidoPorCliente =
                     pedidos.stream().filter(p -> p.getCliente().equalsIgnoreCase(cliente)).toList();

@@ -8,7 +8,10 @@ import org.mockito.*;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -51,7 +54,11 @@ public class GerenciadorDePedidosTeste {
 
     @Test
     public void validaListarPedidosPorCategoria(){
-        gerenciadorDePedidos.listarPedidosPorCategoria("Limpeza");
+        criarPedidosParaTeste();
+        List<Pedido> pedidosCategoria= gerenciadorDePedidos.listarPedidosPorCategoria("Limpeza");
+        assertEquals("Limpeza", pedidosCategoria.get(0).getProdutos().get(0).getCategoria());
+
+
     }
 
     @Test
@@ -69,6 +76,8 @@ public class GerenciadorDePedidosTeste {
         Pedido pedido3 = new Pedido("Felipe");
 
         pedido1.adicionarProduto(new Produto("Detergente", "Limpeza", 3.90));
+        pedido1.adicionarProduto(new Produto("Sabão Barra", "Limpeza", 5.90));
+        pedido1.adicionarProduto(new Produto("Alvejante", "Limpeza", 33.90));
         pedido2.adicionarProduto(new Produto("Hamburguer", "Comida", 38.90));
         pedido3.adicionarProduto(new Produto("HeadSet", "Eletronico", 129.00));
 
