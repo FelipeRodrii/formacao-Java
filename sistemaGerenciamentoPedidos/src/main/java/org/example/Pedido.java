@@ -8,18 +8,18 @@ public class Pedido {
     private List<Produto> produtos;
     private boolean finalizado;
 
+    public Pedido(String cliente) {
+        this.cliente= cliente;
+        this.produtos = new ArrayList<>();
+        this.finalizado = false;
+    }
+
     public String getCliente() {
         return cliente;
     }
 
     public List<Produto> getProdutos(){
         return produtos;
-    }
-
-    public Pedido(String cliente) {
-        this.cliente= cliente;
-        this.produtos = new ArrayList<>();
-        this.finalizado = false;
     }
 
     public void adicionarProduto(Produto produto){
@@ -50,4 +50,12 @@ public class Pedido {
         }
     }
 
+    @Override
+    public String toString() {
+        return "Pedido->" +
+                "Cliente: " + cliente +
+                " Finalizado: " + finalizado +
+                 " Produtos: "+ produtos +
+                  " Total: "+ calcularTotal();
+    }
 }

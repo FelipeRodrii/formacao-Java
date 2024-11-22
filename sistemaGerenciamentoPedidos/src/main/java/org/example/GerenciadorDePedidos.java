@@ -3,16 +3,14 @@ package org.example;
 import java.util.ArrayList;
 import java.util.List;
 
-import static java.util.Arrays.stream;
 
 public class GerenciadorDePedidos {
 
     private List<Pedido> pedidos;
     NotificacaoService notificacaoService;
 
-    public GerenciadorDePedidos(NotificacaoService notificacaoService) {
+    public GerenciadorDePedidos() {
         this.pedidos= new ArrayList<>();
-        this.notificacaoService = notificacaoService;
     }
 
     public void criarPedido(Pedido pedido){
@@ -22,7 +20,7 @@ public class GerenciadorDePedidos {
     public List<Pedido> buscarPedidoPorCliente(String cliente){
         try{
             List<Pedido> pedidoPorCliente =
-                    pedidos.stream().filter(p -> p.getCliente().equalsIgnoreCase(cliente)).toList();
+                    pedidos.stream().filter(p -> p.getCliente().matches(cliente)).toList();
             return pedidoPorCliente;
         } catch (Exception e) {
             throw new RuntimeException(e);
