@@ -42,5 +42,12 @@ public class Main {
         String msn= gerenciadorDePedidos.enviarNotificacaoEmail();
         System.out.println(msn);
 
+        List<Pedido> matches= gerenciadorDePedidos.buscarPedidoPorCliente("felipe");
+
+        for(Pedido pedido: matches)
+            System.out.printf(pedido + "\n");
+
+
+
     }
 }

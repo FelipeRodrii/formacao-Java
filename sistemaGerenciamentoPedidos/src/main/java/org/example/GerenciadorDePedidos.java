@@ -17,10 +17,11 @@ public class GerenciadorDePedidos {
         pedidos.add(pedido);
     }
 
-    public List<Pedido> buscarPedidoPorCliente(String cliente){
+    public List<Pedido> buscarPedidoPorCliente(String clienteNome){
         try{
             List<Pedido> pedidoPorCliente =
-                    pedidos.stream().filter(p -> p.getCliente().matches(cliente)).toList();
+                    pedidos.stream().filter(pedido -> pedido.getCliente().equalsIgnoreCase(clienteNome)
+                            || pedido.getCliente().toLowerCase().contains(clienteNome)).toList();
             return pedidoPorCliente;
         } catch (Exception e) {
             throw new RuntimeException(e);
